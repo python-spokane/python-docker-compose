@@ -1,0 +1,23 @@
+version: '2'
+services:
+  # redis:
+  #   image: redis
+  web:
+    build: .
+    command: python ./repo/app.py
+    volumes:
+      - .:/code
+    environment:
+      - DJANGO_SETTINGS_MODULE=spokesman.newsettings.docker_settings
+      - PYTHONUNBUFFERED=1
+      - IS_DOCKER=1
+      - USE_LIVE_DB=1
+      - USE_LIVE_MEDIA=1
+      - USE_CACHING=1
+      - LOG_SQL=0
+      - AWS_ACCESS_KEY_ID = xxxxxxxx
+      - AWS_SECRET_ACCESS_KEY = xxxxxxxxx
+    ports:
+      - "5000:5000"
+    # depends_on:
+    #   - redis
