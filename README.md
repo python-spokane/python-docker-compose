@@ -28,7 +28,7 @@ mkdir -p ~/code/ && cd ~/code/
 Checkout repository and copy config files from repo Note: Will need credentials from IT to access Subversion/Git? repo
 
 ```
-git https://github.com/python-spokane/python-docker-compose.git
+git clone https://github.com/python-spokane/python-docker-compose.git
 
 ```
 
@@ -57,6 +57,7 @@ Build and run
 -------------
 
 ```
+cd python-docker-compose
 docker-compose up
 ```
 
